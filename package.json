@@ -1,0 +1,19 @@
+{
+  "name": "wordpress-api-importer",
+  "version": "1.0.0",
+  "description": "Importa post da API REST a WordPress nella categoria openData",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "keywords": ["wordpress", "api", "import", "rest"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "dotenv": "^16.3.1"
+  }
+}
+

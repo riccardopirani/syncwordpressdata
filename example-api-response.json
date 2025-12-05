@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "title": "Dataset Meteo Italia 2024",
+    "description": "Dati meteorologici completi per tutte le regioni italiane dell'anno 2024. Include temperature, precipitazioni e venti.",
+    "excerpt": "Raccolta completa dei dati meteo italiani 2024",
+    "url": "https://esempio.com/dataset/meteo-2024",
+    "created_at": "2024-01-15"
+  },
+  {
+    "id": 2,
+    "title": "Popolazione Comuni Italiani",
+    "description": "Dataset aggiornato della popolazione residente nei comuni italiani. Dati ISTAT con dettaglio comunale e provinciale.",
+    "excerpt": "Statistiche popolazione italiana per comune",
+    "url": "https://esempio.com/dataset/popolazione",
+    "created_at": "2024-02-20"
+  },
+  {
+    "id": 3,
+    "title": "Trasporto Pubblico Milano",
+    "description": "Open data sul trasporto pubblico di Milano: orari, fermate, linee ATM e statistiche di utilizzo.",
+    "excerpt": "Dati aperti trasporto pubblico milanese",
+    "url": "https://esempio.com/dataset/atm-milano",
+    "created_at": "2024-03-10"
+  }
+]
+
