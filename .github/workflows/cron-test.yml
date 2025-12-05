@@ -1,0 +1,40 @@
+name: Scheduled Health Check
+
+on:
+  schedule:
+    # Esegui ogni giorno alle 02:00 UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+jobs:
+  health-check:
+    name: Daily Health Check
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Run health tests
+      run: npm run test:health
+      continue-on-error: true
+      
+    - name: Check dependencies updates
+      run: npm outdated || true
+      
+    - name: Security audit
+      run: npm audit || true
+      
+    - name: Report results
+      if: failure()
+      run: echo "❌ Health check fallito! Controlla i log."
+

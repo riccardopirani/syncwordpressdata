@@ -6,14 +6,34 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "dev": "node --watch index.js"
+    "dev": "node --watch index.js",
+    "test": "node --test tests/**/*.test.js",
+    "test:coverage": "node --test --experimental-test-coverage tests/**/*.test.js",
+    "test:integration": "node --test tests/integration/**/*.test.js",
+    "test:health": "node --test tests/health.test.js",
+    "test:watch": "node --test --watch tests/**/*.test.js",
+    "lint": "eslint *.js tests/**/*.js",
+    "lint:fix": "eslint *.js tests/**/*.js --fix",
+    "format": "prettier --write \"**/*.{js,json,md}\"",
+    "format:check": "prettier --check \"**/*.{js,json,md}\"",
+    "security:check": "npm audit --audit-level=moderate",
+    "validate": "node tests/validate-config.js",
+    "build": "echo 'No build step required'",
+    "prepublishOnly": "npm test && npm run lint"
   },
-  "keywords": ["wordpress", "api", "import", "rest"],
+  "keywords": ["wordpress", "api", "import", "rest", "opendata"],
   "author": "",
   "license": "MIT",
   "dependencies": {
     "axios": "^1.6.2",
     "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.55.0",
+    "prettier": "^3.1.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
 
